@@ -34,7 +34,7 @@ function LiquidPortrait({ who, onFlip }) {
         onFlip(liquid.who);
         setLive(true);
       } catch (err) {
-        console.warn('[sqylon] liquid portrait unavailable', err);
+        console.warn('[sqaron] liquid portrait unavailable', err);
       }
     })();
     return () => { cancelled = true; };

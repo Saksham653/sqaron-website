@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: 'Shivam Jha — Frontend developer & product designer | Co-founder, Sqaron Technologies',
-  description: 'Shivam Jha designs and builds what people touch: sites that sell, Android and iOS apps, AI products and the motion in between. Co-founder of Sqaron Technologies; led OSHT – Agro Trading, founded Clonix, built NexeraAI, TBJ Properties and ADFusion.',
+  description: 'Shivam Jha designs and builds what people touch: sites that sell, Android and iOS apps, AI products and the motion in between. Co-founder of Sqaron Technologies; built OSHT – Agro Trading with Saksham Srivastava (the app, screens and website), co-founded Clonix with Saksham (its frontend and extractor), built NexeraAI, TBJ Properties and ADFusion.',
   alternates: { canonical: '/shivam-jha/' },
   openGraph: { title: 'Shivam Jha — interfaces that look back', images: [{ url: '/assets/og.png', width: 1200, height: 630 }] },
 };

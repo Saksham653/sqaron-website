@@ -3,9 +3,18 @@
 /* Start a project: the brief form (Netlify Forms) in front of a raymarched chrome blob.
  * The hero's quick brief fills in what you need, when and the budget. */
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { useSite } from './SiteProvider';
 import { RevealWords, Reveal, Magnetic } from './ui/motion';
 import { NEEDS, WHENS, BUDGETS, SITE } from '@/lib/site';
+
+// the direct routes, one row each, with both founders on every row
+const DIRECT = [
+  ['Portfolio', [['Shivam Jha', 'https://myself-koej.vercel.app/'], ['Saksham Srivastava', '/saksham-srivastava/']]],
+  ['LinkedIn', [['Shivam Jha', 'https://www.linkedin.com/in/shivam-jha-509482268/'], ['Saksham Srivastava', 'https://linkedin.com/in/saksham-srivastava-b689a8367']]],
+  ['GitHub', [['Shivam Jha', 'https://github.com/shivamj56'], ['Saksham Srivastava', 'https://github.com/Saksham653']]],
+  ['Fiverr', [['Shivam Jha', 'https://www.fiverr.com/heyshivm'], ['Saksham Srivastava', 'https://www.fiverr.com/sakshamai_']]],
+];
 
 function Blob() {
   const canvas = useRef(null);
@@ -16,7 +25,7 @@ function Blob() {
         const SQ = (await import('@/lib/engines/blob')).default;
         if (!cancelled && SQ.Blob) SQ.Blob(canvas.current);
       } catch (err) {
-        console.warn('[sqylon] blob unavailable', err);
+        console.warn('[sqaron] blob unavailable', err);
       }
     })();
     return () => { cancelled = true; };
@@ -64,9 +73,16 @@ export default function Contact() {
           <Reveal as="p" className="cta__sub" y={24} delay={0.1}>Tell us what you&apos;re building. A founder replies within one working day with questions, then a written plan and a fixed price.</Reveal>
           <ul className="cta__direct">
             <li><span>Email</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-            <li><span>Portfolio</span><a href="https://myself-koej.vercel.app/" target="_blank" rel="noopener noreferrer">Shivam Jha ↗</a></li>
-            <li><span>Fiverr</span><a href="https://www.fiverr.com/heyshivm" target="_blank" rel="noopener noreferrer">fiverr.com/heyshivm ↗</a></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/shivam-jha-509482268/" target="_blank" rel="noopener noreferrer">Shivam Jha ↗</a></li>
+            {DIRECT.map(([label, people]) => (
+              <li key={label}>
+                <span>{label}</span>
+                <div className="cta__who">
+                  {people.map(([name, href]) => (href.startsWith('/')
+                    ? <Link key={href} href={href}>{name} →</Link>
+                    : <a key={href} href={href} target="_blank" rel="noopener noreferrer">{name} ↗</a>))}
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
         <Reveal as="form" className={`brief${status.sent ? ' is-sent' : ''}`} id="brief" name="brief" method="POST" noValidate onSubmit={submit} y={60} amount={0.1}>

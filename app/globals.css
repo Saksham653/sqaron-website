@@ -375,6 +375,7 @@ html.is-browsing.has-cursor, html.is-browsing.has-cursor a, html.is-browsing.has
 .cta__direct span { width: 84px; flex: none; font: 500 11px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
 .cta__direct a { text-decoration: none; font-size: 17px; border-bottom: 1px solid var(--line-2); padding-bottom: 2px; word-break: break-word; }
 .cta__direct a:hover { border-color: var(--text); }
+.cta__who { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .brief { position: relative; display: grid; gap: 18px; padding: clamp(22px, 3vw, 38px); border-radius: 30px; background: rgba(13, 15, 20, 0.5); -webkit-backdrop-filter: blur(26px) saturate(1.5); backdrop-filter: blur(26px) saturate(1.5); border: 1px solid var(--line-2); box-shadow: 0 50px 100px -40px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.08); }
 .brief__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; transition: opacity 0.3s; }
 .brief__row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -485,7 +486,7 @@ html.is-browsing.has-cursor, html.is-browsing.has-cursor a, html.is-browsing.has
 .bk__id { display: flex; flex-direction: column; gap: 16px; padding: clamp(26px, 3vw, 40px); border-right: 1px solid rgba(110, 242, 166, 0.1); }
 .bk__kicker { margin: 0; font: 500 12px/1.4 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: #55695F; }
 .bk__who { display: flex; align-items: center; gap: 16px; }
-.bk__who img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.1); box-shadow: 0 0 0 2px #050806, 0 0 0 3px rgba(110, 242, 166, 0.45); }
+.bk__who img { width: 96px; height: 96px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.1); box-shadow: 0 0 0 2px #050806, 0 0 0 3px rgba(110, 242, 166, 0.45); }
 .bk__who h3 { margin: 0; font: 600 clamp(1.8rem, 1rem + 1.8vw, 2.7rem)/1 var(--sans); letter-spacing: -0.045em; }
 .bk__role { margin: 8px 0 0; font: 500 12px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mint); }
 .bk__bio { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
@@ -493,7 +494,11 @@ html.is-browsing.has-cursor, html.is-browsing.has-cursor a, html.is-browsing.has
 .bk__cmd span { color: var(--mint); margin-right: 8px; }
 .bk__open { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 20px; border-radius: 12px; background: var(--mint); color: #03130B; font: 600 15px/1 var(--mono); text-decoration: none; transition: box-shadow 0.3s, translate 0.3s var(--ease); }
 .bk__open:hover { translate: 0 -2px; box-shadow: 0 0 0 1px rgba(110, 242, 166, 0.5), 0 16px 40px -12px rgba(110, 242, 166, 0.7); }
-.bk__links { display: flex; gap: 18px; margin-top: auto; font: 500 13px/1 var(--mono); }
+.bk__tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.bk__tags li { padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(110, 242, 166, 0.18); font: 500 12px/1 var(--mono); color: #8CA399; background: rgba(110, 242, 166, 0.03); }
+.bk__built { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.bk__built span { margin-right: 8px; font: 500 11px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: #55695F; }
+.bk__links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: auto; font: 500 13px/1 var(--mono); }
 .bk__links a { color: #8CA399; text-decoration: none; }
 .bk__links a:hover { color: var(--mint); }
 .bk__wall { position: relative; min-height: 540px; }
@@ -502,6 +507,17 @@ html.is-browsing.has-cursor, html.is-browsing.has-cursor a, html.is-browsing.has
   .bk__body { grid-template-columns: 1fr; }
   .bk__id { border-right: 0; border-bottom: 1px solid rgba(110, 242, 166, 0.1); }
   .bk__wall { min-height: 420px; }
+}
+/* phones: the card is held on screen while the words leave, so it has to fit the screen: a smaller photo and word
+   wall, tighter lines, and no decorative command line */
+@media (max-width: 560px) {
+  .bk__id { gap: 10px; padding: 20px 22px; }
+  .bk__who img { width: 72px; height: 72px; }
+  .bk__who h3 { font-size: 1.65rem; }
+  .bk__bio { font-size: 15px; line-height: 1.5; }
+  .bk__cmd { display: none; }
+  .bk__open { min-height: 44px; }
+  .bk__wall { min-height: 220px; }
 }
 @media (prefers-reduced-motion: reduce) { .bk__state i { animation: none; } }
 /* 02 · the back end's intro (components/Founders.jsx): "Meet THE BACKEND EXPERT" in green particles (React Bits'

@@ -21,13 +21,16 @@ import { gsap, useGSAP } from '@/lib/gsap';
 const SHIVAM = {
   who: 'B', name: 'Shivam Jha', kicker: '01 — The front end', role: 'Co-founder · AI architect, product & frontend',
   img: '/assets/img/founders/shivam-wide.jpg', w: 1024, h: 571,
-  bio: 'An AI architect and prompt engineer who designs and builds what people touch: sites that sell, Android and iOS apps, AI products and Chrome extensions. He led OSHT – Agro Trading, founded Clonix and built NexeraAI. Off-screen he also works as a freelance model.',
+  bio: 'An AI architect and prompt engineer who designs and builds what people touch: sites that sell, Android and iOS apps, AI products and Chrome extensions. With Saksham Srivastava he built OSHT – Agro Trading and co-founded Clonix, and he built NexeraAI. Off-screen he also works as a freelance model.',
   tags: ['Next.js', 'React Native', 'LangGraph', 'LlamaIndex', 'pgvector', 'GSAP & WebGL'],
-  built: 'OSHT (lead) · Clonix · NexeraAI · TBJ Properties · ADFusion · Safarline',
+  built: 'OSHT (app & screens) · Clonix · NexeraAI · TBJ Properties · ADFusion · Safarline',
   links: [['Profile', '/shivam-jha/'], ['Portfolio', 'https://myself-koej.vercel.app/'], ['GitHub', 'https://github.com/shivamj56'], ['LinkedIn', 'https://www.linkedin.com/in/shivam-jha-509482268/'], ['X', 'https://x.com/heyshivm11'], ['Fiverr', 'https://www.fiverr.com/heyshivm']],
 };
 
 const PORTFOLIO = '/saksham-srivastava/';
+const SAKSHAM_TAGS = ['Python', 'FastAPI', 'PostgreSQL', 'LangChain', 'Docker', 'MLOps'];
+const SAKSHAM_BUILT = 'OSHT (backend) · Clonix (backend) · LUMIQ · StockWaves · FlowCraft · HR Agent Pro';
+const SAKSHAM_LINKS = [['Portfolio', 'https://saksham653.github.io/'], ['GitHub', 'https://github.com/Saksham653'], ['LinkedIn', 'https://linkedin.com/in/saksham-srivastava-b689a8367'], ['Fiverr', 'https://www.fiverr.com/sakshamai_']];
 const BACKEND_WORDS = [
   { label: 'Meet Saksham Srivastava', href: PORTFOLIO },
   { label: 'the back end', href: PORTFOLIO },
@@ -38,7 +41,7 @@ const BACKEND_WORDS = [
   { label: 'MLOps', href: `${PORTFOLIO}#stack` },
   { label: 'background workers', href: `${PORTFOLIO}#how` },
   { label: 'ledgers that balance', href: `${PORTFOLIO}#work` },
-  { label: 'the Clonix engine', href: `${PORTFOLIO}#work` },
+  { label: 'the Clonix backend', href: `${PORTFOLIO}#work` },
   { label: 'open his portfolio →', href: PORTFOLIO },
 ];
 
@@ -235,24 +238,28 @@ function Saksham({ onOpen }) {
                   <p className="bk__role">Co-founder · Backend, AI &amp; data</p>
                 </div>
               </div>
-              <p className="bk__bio">The systems behind the screen: APIs, databases, agentic AI, LLM apps and MLOps pipelines. He ran the backend on OSHT and leads the engine behind Clonix.</p>
+              <p className="bk__bio">The systems behind the screen: APIs, databases, agentic AI, LLM apps and MLOps pipelines. With Shivam Jha he built OSHT, running its backend, and co-founded Clonix, building its whole backend.</p>
+              <ul className="bk__tags">{SAKSHAM_TAGS.map((t) => <li key={t}>{t}</li>)}</ul>
+              <p className="bk__built"><span>Built</span> {SAKSHAM_BUILT}</p>
               <p className="bk__cmd" aria-hidden="true"><span>$</span> open ./saksham --portfolio</p>
               <a className="bk__open" href={PORTFOLIO} onClick={(e) => { if (e.metaKey || e.ctrlKey) return; e.preventDefault(); onOpen(PORTFOLIO); }} data-cursor="Open">
                 Open his portfolio <span aria-hidden="true">→</span>
               </a>
               <div className="bk__links">
-                <a href="https://github.com/Saksham653" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a href="https://linkedin.com/in/saksham-srivastava-b689a8367" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                {SAKSHAM_LINKS.map(([label, href]) => <a key={href} href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a>)}
               </div>
             </div>
             <div className="bk__wall" onClickCapture={capture}>
+              {/* phones get a shorter wall, so a smaller, tighter type keeps one row for every word; keyed on the
+                  layout so the wall is measured again when it switches */}
               <TypographicWall
+                key={layout || 'desk'}
                 words={BACKEND_WORDS}
                 colors={['#E9FFF3', '#6EF2A6']}
                 charset="code"
                 layout="scatter"
-                fontSize={14}
-                lineHeight={1.95}
+                fontSize={layout === 'phone' ? 12 : 14}
+                lineHeight={layout === 'phone' ? 1.35 : 1.95}
                 density={0.72}
                 wallOpacity={0.12}
                 scanDuration={2.8}

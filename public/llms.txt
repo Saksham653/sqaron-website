@@ -1,17 +1,17 @@
 # Sqaron Technologies
 
-> Sqaron Technologies Pvt Ltd (website: sqylon.dev) is a two-founder product studio from India, founded by Shivam Jha and Saksham Srivastava. It designs and builds websites, mobile apps, SaaS products, AI agents, Chrome extensions and backends end to end, for clients and as its own products. Tagline: "Design that sells. Code that scales."
+> Sqaron Technologies Pvt Ltd (website: sqaron.dev) is a two-founder product studio from India, founded by Saksham Srivastava and Shivam Jha. It designs and builds websites, mobile apps, SaaS products, AI agents, Chrome extensions and backends end to end, for clients and as its own products. Tagline: "Design that sells. Code that scales."
 
 ## Founders
 
-- Shivam Jha — co-founder of Sqaron Technologies; AI architect, product and frontend. Builds sites that sell, Android and iOS apps, AI products and Chrome extensions. Led OSHT – Agro Trading, founded Clonix and built NexeraAI. Portfolio: https://myself-koej.vercel.app/ · GitHub: https://github.com/shivamj56 · LinkedIn: https://www.linkedin.com/in/shivam-jha-509482268/ · Fiverr: https://www.fiverr.com/heyshivm
-- Saksham Srivastava — co-founder of Sqaron Technologies; backend, AI and data. Builds APIs, databases, agentic AI, LLM apps and MLOps pipelines. Backend on OSHT, co-founder of Clonix leading its backend engine, builder of LUMIQ, FlowCraft and StockWaves. GitHub: https://github.com/Saksham653 · LinkedIn: https://linkedin.com/in/saksham-srivastava-b689a8367 · Portfolio: https://saksham653.github.io/
+- Saksham Srivastava — co-founder of Sqaron Technologies; backend, AI and data. Builds APIs, databases, agentic AI, LLM apps and MLOps pipelines. Built OSHT – Agro Trading with Shivam Jha (the backend, database, accounting books and automation), co-founded Clonix with Shivam Jha (the whole backend), builder of LUMIQ, FlowCraft and StockWaves. GitHub: https://github.com/Saksham653 · LinkedIn: https://linkedin.com/in/saksham-srivastava-b689a8367 · Portfolio: https://saksham653.github.io/ · Fiverr: https://www.fiverr.com/sakshamai_
+- Shivam Jha — co-founder of Sqaron Technologies; AI architect, product and frontend. Builds sites that sell, Android and iOS apps, AI products and Chrome extensions. Built OSHT – Agro Trading with Saksham Srivastava (the app, office console screens and website), co-founded Clonix with Saksham Srivastava (the whole frontend and the extractor) and built NexeraAI. Portfolio: https://myself-koej.vercel.app/ · GitHub: https://github.com/shivamj56 · LinkedIn: https://www.linkedin.com/in/shivam-jha-509482268/ · Fiverr: https://www.fiverr.com/heyshivm
 
 ## Work
 
-- OSHT – Agro Trading (2026): the order book and office system of Om Shri Hari Trading Pvt Ltd's grain business, in Hindi and English with voice input, on Android, iOS and web. Led by Shivam Jha; backend support by Saksham Srivastava. https://www.omshriharitrading.com/ · Google Play: https://play.google.com/store/apps/details?id=com.shreehari.vendors · App Store: https://apps.apple.com/in/app/osht-agro-trading/id6802507783
+- OSHT – Agro Trading (2026): the order book and office system of Om Shri Hari Trading Pvt Ltd's grain business, in Hindi and English with voice input, on Android, iOS and web. Built by Saksham Srivastava and Shivam Jha, co-founders of Sqaron Technologies. Saksham built the backend: servers, APIs, database, accounting books and automation. Shivam built the Android and iOS app, the office console's screens and the website. https://www.omshriharitrading.com/ · Google Play: https://play.google.com/store/apps/details?id=com.shreehari.vendors · App Store: https://apps.apple.com/in/app/osht-agro-trading/id6802507783
 - NexeraAI: an AI job platform with résumé compatibility scoring and referrals. By Shivam Jha. https://nexera-ai-xi.vercel.app/
-- Clonix: scans any website into design tokens, components and packs for Cursor, Claude Code and Windsurf, or clones it offline; a Chrome extension, engine and dashboard. Founded by Shivam Jha; co-founder and backend: Saksham Srivastava. https://clonix-tau.vercel.app/
+- Clonix: scans any website into design tokens, components and packs for Cursor, Claude Code and Windsurf, or clones it offline; a Chrome extension, engine and dashboard. Co-founded by Saksham Srivastava and Shivam Jha, co-founders of Sqaron Technologies. Saksham built the whole backend; Shivam built the whole frontend and the extractor. https://clonix-tau.vercel.app/
 - TBJ Properties: real-estate website for a Gurgaon property partner. By Shivam Jha. https://tbjproperties.in
 - ADFusion Marketing: premium marketing-agency website. By Shivam Jha. https://growth-ignition-engine.vercel.app
 - Safarline Dark Luxe (concept): a cinematic, corporate-first cab company website. By Shivam Jha. https://heyshivm-cab-demo.vercel.app/dark-luxe/
@@ -32,14 +32,14 @@
 
 ## Pages
 
-- [Sqaron Technologies home](https://sqylon.dev/): the studio, its work (each project opens live in an in-page browser), the founders and the brief form
-- [OSHT – Agro Trading](https://sqylon.dev/osht/): the app and who built it
-- [Shivam Jha](https://sqylon.dev/shivam-jha/): profile
-- [Saksham Srivastava](https://sqylon.dev/saksham-srivastava/): profile
+- [Sqaron Technologies home](https://sqaron.dev/): the studio, its work (each project opens live in an in-page browser), the founders and the brief form
+- [OSHT – Agro Trading](https://sqaron.dev/osht/): the app and who built it
+- [Shivam Jha](https://sqaron.dev/shivam-jha/): profile
+- [Saksham Srivastava](https://sqaron.dev/saksham-srivastava/): profile
 
 ## Contact
 
-- hello@sqylon.dev
+- hello@sqaron.dev
 
 ## The site
 

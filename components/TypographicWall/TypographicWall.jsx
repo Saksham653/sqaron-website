@@ -173,7 +173,8 @@ const TypographicWall = forwardRef(function TypographicWall(props, ref) {
         let col = margin;
         const room = Math.max(0, cols - len - margin * 2);
         if (s.layout === 'scatter') {
-          row = 1 + Math.min(usable - 1, Math.floor(i * band + rand() * Math.max(1, band - 0.6)));
+          // anywhere inside the word's own band of rows, so two words never share a row
+          row = 1 + Math.min(usable - 1, Math.floor(i * band + rand() * Math.max(0, band - 1)));
           col = margin + Math.floor(rand() * (room + 1));
         } else if (s.layout === 'diagonal') {
           col = margin + Math.round((n > 1 ? i / (n - 1) : 0) * Math.max(0, cols - maxLen - margin * 2));

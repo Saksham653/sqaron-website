@@ -3,7 +3,7 @@ Shivam Jha — Co-founder, AI architect, product & frontend
 Saksham Srivastava — Co-founder, backend, AI & data
 
 /* COMPANY */
-Sqaron Technologies Pvt Ltd — https://sqylon.dev
+Sqaron Technologies Pvt Ltd — https://sqaron.dev
 Developers of OSHT – Agro Trading for Om Shri Hari Trading Private Limited
 
 /* SITE */

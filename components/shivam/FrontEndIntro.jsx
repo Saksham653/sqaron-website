@@ -215,7 +215,7 @@ export default function FrontEndIntro({ onOpen }) {
       <p className="fe__kicker">01 — The front end</p>
       <h3 className="fe__name" id="feName"><span className="fe__first">Shivam</span> <em>Jha</em></h3>
       <p className="fe__role">Co-founder · AI architect, product &amp; frontend</p>
-      <p className="fe__bio">He designs and builds what people touch: sites that sell, Android and iOS apps, AI products and Chrome extensions. He led OSHT – Agro Trading, founded Clonix and built NexeraAI.</p>
+      <p className="fe__bio">He designs and builds what people touch: sites that sell, Android and iOS apps, AI products and Chrome extensions. With Saksham Srivastava he built OSHT – Agro Trading and co-founded Clonix, and he built NexeraAI.</p>
       <ul className="fe__tags">{TAGS.map((t) => <li key={t}>{t}</li>)}</ul>
       <div className="fe__act">
         <Link
