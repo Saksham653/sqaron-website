@@ -2,9 +2,11 @@
 
 /* Saksham Srivastava's portfolio: the back end of Sqaron, presented like the systems he builds.
  * A console top bar with a live clock, a typographic wall that decodes his stack behind a decoding
- * name, an ASCII portrait, about.json, a stack table, his deployments (live ones open in the in-page
- * browser), the shape of his systems, a log stream, and a ping to start a project. */
-import { useEffect, useState } from 'react';
+ * name, an ASCII portrait that settles into his photo, the OSHT backend in numbers, about.json, a look
+ * inside OSHT (a system map to click through), a console visitors can type into, a stack table, his
+ * deployments (live ones open in the in-page browser), how he builds, a log stream, the questions people ask, and
+ * a ping. */
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { MotionConfig, motion } from 'motion/react';
 import SmoothScroll from '../SmoothScroll';
@@ -15,8 +17,10 @@ import TypographicWall from '../TypographicWall/TypographicWall';
 import ScrambleText from './ScrambleText';
 import AsciiPortrait from './AsciiPortrait';
 import LogStream from './LogStream';
-import Diagram from './Diagram';
-import { SAKSHAM, STACK, DEPLOYMENTS, WALL_WORDS } from '@/lib/saksham';
+import Stats from './Stats';
+import SystemMap from './SystemMap';
+import Console from './Console';
+import { SAKSHAM, STACK, DEPLOYMENTS, WALL_WORDS, OSHT_FACTS, FAQ } from '@/lib/saksham';
 import { SITE } from '@/lib/site';
 import './saksham.css';
 
@@ -43,8 +47,9 @@ function TopBar() {
         <span className="sk-top__path" aria-hidden="true">/ founders / <b>saksham</b></span>
         <span className="sk-top__status"><i aria-hidden="true" />online · <Clock /></span>
         <nav className="sk-top__nav" aria-label="Page">
+          <a href="#osht">osht</a>
+          <a href="#console">console</a>
           <a href="#work">deployments</a>
-          <a href="#stack">stack</a>
           <a href="#ping">ping</a>
           <Link className="sk-top__home" href="/">← sqaron</Link>
         </nav>
@@ -64,6 +69,13 @@ function Head({ n, cmd, title, id }) {
 
 function Hero() {
   const github = SAKSHAM.links[0].href;
+  // the characters settle, then the photo wipes in; once the visitor picks a view, it stays theirs
+  const [photo, setPhoto] = useState(false);
+  const chosen = useRef(false);
+  const decoded = useCallback(() => {
+    setTimeout(() => { if (!chosen.current) setPhoto(true); }, 900);
+  }, []);
+  const show = (p) => { chosen.current = true; setPhoto(p); };
   return (
     <section className="sk-hero" aria-labelledby="skName">
       <TypographicWall
@@ -103,8 +115,14 @@ function Hero() {
         </div>
         <motion.div className="sk-hero__portrait" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ ...SPRING, delay: 0.3 }}>
           <div className="sk-term">
-            <div className="sk-term__bar"><span className="sk-dots"><i /><i /><i /></span><span>portrait.ascii</span><span className="sk-term__hint">hover to see</span></div>
-            <AsciiPortrait src={SAKSHAM.photo} alt="Saksham Srivastava" cols={86} />
+            <div className="sk-term__bar">
+              <span className="sk-dots"><i /><i /><i /></span><span>portrait.{photo ? 'jpg' : 'ascii'}</span>
+              <span className="sk-flip" role="group" aria-label="Portrait view">
+                <button type="button" aria-pressed={!photo} onClick={() => show(false)}>ascii</button>
+                <button type="button" aria-pressed={photo} onClick={() => show(true)}>photo</button>
+              </span>
+            </div>
+            <AsciiPortrait src={SAKSHAM.photo} alt="Saksham Srivastava" cols={86} photo={photo} onDecoded={decoded} />
           </div>
         </motion.div>
       </div>
@@ -157,10 +175,45 @@ function About() {
         </motion.div>
         <motion.div className="sk-prose" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={list(0.1)}>
           <motion.p variants={rise}>Saksham builds the parts nobody sees and everybody depends on. If a screen shows a number, he is the reason it is right.</motion.p>
-          <motion.p variants={rise}>On <Link href="/osht/">OSHT – Agro Trading</Link> he ran the backend: the servers and APIs the Android, iOS and web apps talk to, double-entry books that always balance, background workers, OCR and PDF automation, and releases with no downtime.</motion.p>
-          <motion.p variants={rise}>He co-founded Clonix, where he leads the engine that turns a website into design tokens and components, and on his own he has shipped LUMIQ, StockWaves, FlowCraft and a run of agent, MLOps and data tools.</motion.p>
+          <motion.p variants={rise}>He built <Link href="/osht/">OSHT – Agro Trading</Link> with <Link href="/shivam-jha/">Shivam Jha</Link>. His part is the backend: the servers and APIs the Android, iOS and web apps talk to, double-entry books that always balance, background workers, OCR and PDF automation, and releases with no downtime. Shivam built what people use: the app, the office console&apos;s screens and the website.</motion.p>
+          <motion.p variants={rise}>He co-founded Clonix with Shivam and built its whole backend; Shivam built the frontend and the extractor. On his own, Saksham has shipped LUMIQ, StockWaves, FlowCraft and a run of agent, MLOps and data tools.</motion.p>
         </motion.div>
       </div>
+    </section>
+  );
+}
+
+function Osht() {
+  return (
+    <section className="sk-sec sk-wrap" id="osht" aria-labelledby="skOsht">
+      <Head n="02" cmd="osht --inside" title="Inside the OSHT backend" id="skOsht" />
+      <motion.div className="sk-osht__lead" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={list(0.1)}>
+        <motion.p variants={rise}><Link href="/osht/">OSHT – Agro Trading</Link> runs a grain trading business end to end: brokers in the field, an office that keeps the books, and lorries, papers and payments in between.</motion.p>
+        <motion.p variants={rise}>Saksham built the backend all of it runs on. Tap any part of the map to see what it does.</motion.p>
+      </motion.div>
+      <motion.div className="sk-term sk-map-wrap" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={SPRING}>
+        <div className="sk-term__bar"><span className="sk-dots"><i /><i /><i /></span><span>osht/system.map</span><span className="sk-term__hint">tap a part</span></div>
+        <SystemMap />
+      </motion.div>
+      <motion.ul className="sk-facts" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={list(0.07)}>
+        {OSHT_FACTS.map((f, i) => (
+          <motion.li key={f.title} variants={rise}>
+            <span className="sk-facts__n">{String(i + 1).padStart(2, '0')}</span>
+            <b>{f.title}</b>
+            <span>{f.text}</span>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </section>
+  );
+}
+
+function ConsoleSec() {
+  return (
+    <section className="sk-sec sk-wrap" id="console" aria-labelledby="skConsole">
+      <Head n="03" cmd="./console" title="Ask his systems" id="skConsole" />
+      <p className="sk-sub">A console you can actually type into. Not sure what to ask? Tap a command under the prompt.</p>
+      <Console />
     </section>
   );
 }
@@ -168,7 +221,7 @@ function About() {
 function Stack() {
   return (
     <section className="sk-sec sk-wrap" id="stack" aria-labelledby="skStack">
-      <Head n="02" cmd="saksham --stack" title="What he reaches for" id="skStack" />
+      <Head n="04" cmd="saksham --stack" title="What he reaches for" id="skStack" />
       <div className="sk-term sk-table" role="table" aria-label="Tools, what they are for, and where they shipped">
         <div className="sk-term__bar"><span className="sk-dots"><i /><i /><i /></span><span>stack --list</span><span className="sk-term__hint">{STACK.length} rows</span></div>
         <div className="sk-table__row sk-table__row--head" role="row"><span role="columnheader">tool</span><span role="columnheader">used for</span><span role="columnheader">shipped in</span></div>
@@ -218,7 +271,7 @@ function Deployment({ d, index }) {
 function Work() {
   return (
     <section className="sk-sec sk-wrap" id="work" aria-labelledby="skWork">
-      <Head n="03" cmd="saksham --deployments" title="What he has shipped" id="skWork" />
+      <Head n="05" cmd="saksham --deployments" title="What he has shipped" id="skWork" />
       <motion.div className="sk-deps" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.05 }} variants={list(0.07)}>
         {DEPLOYMENTS.map((d, i) => <Deployment key={d.slug} d={d} index={i} />)}
       </motion.div>
@@ -234,11 +287,7 @@ function How() {
   ];
   return (
     <section className="sk-sec sk-wrap" id="how" aria-labelledby="skHow">
-      <Head n="04" cmd="cat architecture.svg" title="The shape of what he builds" id="skHow" />
-      <motion.div className="sk-term sk-diagram-wrap" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={SPRING}>
-        <div className="sk-term__bar"><span className="sk-dots"><i /><i /><i /></span><span>architecture.svg</span></div>
-        <Diagram />
-      </motion.div>
+      <Head n="06" cmd="cat principles.md" title="How he builds" id="skHow" />
       <motion.ul className="sk-rules" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={list(0.1)}>
         {rules.map(([t, d], i) => (
           <motion.li key={t} variants={rise}><span className="sk-rules__n">0{i + 1}</span><b>{t}</b><span>{d}</span></motion.li>
@@ -251,9 +300,32 @@ function How() {
 function Logs() {
   return (
     <section className="sk-sec sk-wrap" id="logs" aria-labelledby="skLogs">
-      <Head n="05" cmd="tail -f saksham.log" title="What his systems are doing" id="skLogs" />
+      <Head n="07" cmd="tail -f saksham.log" title="What his systems are doing" id="skLogs" />
       <LogStream />
       <p className="sk-note">Each line describes a real feature of a project he built. The times are your clock, not production data.</p>
+    </section>
+  );
+}
+
+// the first one is open; the same answers go to search engines and AI assistants as FAQPage data
+const FAQ_LD = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+};
+
+function Faq() {
+  return (
+    <section className="sk-sec sk-wrap" id="faq" aria-labelledby="skFaq">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }} />
+      <Head n="08" cmd="cat faq.md" title="Questions people ask" id="skFaq" />
+      <div className="sk-faq">
+        {FAQ.map(([q, a], i) => (
+          <details key={q} open={i === 0}>
+            <summary><span className="sk-faq__n">{String(i + 1).padStart(2, '0')}</span>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
     </section>
   );
 }
@@ -261,7 +333,7 @@ function Logs() {
 function Ping() {
   return (
     <section className="sk-sec sk-wrap" id="ping" aria-labelledby="skPing">
-      <Head n="06" cmd="ping saksham" title="Build something with him" id="skPing" />
+      <Head n="09" cmd="ping saksham" title="Build something with him" id="skPing" />
       <div className="sk-ping">
         <div className="sk-term">
           <div className="sk-term__bar"><span className="sk-dots"><i /><i /><i /></span><span>ping</span></div>
@@ -305,11 +377,15 @@ export default function SakshamPortfolio() {
             <TopBar />
             <main id="sk-main">
               <Hero />
+              <Stats />
               <About />
+              <Osht />
+              <ConsoleSec />
               <Stack />
               <Work />
               <How />
               <Logs />
+              <Faq />
               <Ping />
             </main>
             <Foot />

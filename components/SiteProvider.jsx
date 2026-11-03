@@ -29,6 +29,36 @@ export function SiteProvider({ children }) {
     if (onComplete) setTimeout(onComplete, calm ? 0 : 800);
   }, [lenis]);
 
+  // arriving from another page with a hash (/#contact): once the page has settled, glide to it
+  const arrived = useRef(false);
+  useEffect(() => {
+    const id = window.location.hash;
+    if (arrived.current || id.length < 2) return undefined;
+    let el = null;
+    try { el = document.querySelector(id); } catch { return undefined; }
+    if (!el) return undefined;
+    // pinned sections above it keep changing the page's height while it loads, so wait until the
+    // height holds still, glide there, then check where it landed and correct once more
+    let t = 0;
+    let last = -1;
+    let still = 0;
+    let tries = 0;
+    const off = () => Math.abs(el.getBoundingClientRect().top) > 40;
+    const check = () => { if (off()) goTo(el, { duration: 0.6 }); };
+    const wait = () => {
+      const h = document.documentElement.scrollHeight;
+      still = h === last ? still + 1 : 0;
+      last = h;
+      tries += 1;
+      if (still < 3 && tries < 30) { t = setTimeout(wait, 200); return; }
+      arrived.current = true;
+      goTo(el, { duration: 1.1 });
+      t = setTimeout(check, 1500);
+    };
+    t = setTimeout(wait, 300);
+    return () => clearTimeout(t);
+  }, [goTo]);
+
   // in-page anchors (#work, #contact...) glide with Lenis
   useEffect(() => {
     const onClick = (e) => {

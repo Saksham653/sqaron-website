@@ -6,15 +6,15 @@ const PLAY = 'https://play.google.com/store/apps/details?id=com.shreehari.vendor
 const STORE = 'https://apps.apple.com/in/app/osht-agro-trading/id6802507783';
 
 export const metadata = {
-  title: 'OSHT – Agro Trading app | Led by Shivam Jha, with Saksham Srivastava (Sqaron Technologies)',
-  description: 'OSHT – Agro Trading is the grain-trade order book of Om Shri Hari Trading Pvt Ltd, on Android, iOS and the web. Led and built by Shivam Jha, with backend support from Saksham Srivastava, of Sqaron Technologies.',
+  title: 'OSHT – Agro Trading app | Built by Saksham Srivastava and Shivam Jha (Sqaron Technologies)',
+  description: "OSHT – Agro Trading is the grain-trade order book of Om Shri Hari Trading Pvt Ltd, on Android, iOS and the web. Built by Saksham Srivastava and Shivam Jha, co-founders of Sqaron Technologies. Saksham built the backend: servers, APIs, database, accounting books and automation. Shivam built the Android and iOS app, the office console's screens and the website.",
   alternates: { canonical: '/osht/' },
 };
 
 const FAQ = [
-  ['Who developed the OSHT – Agro Trading app?', 'OSHT – Agro Trading was led and built by Shivam Jha (product, Android and iOS app, web office console) with backend support from Saksham Srivastava, the two founders of Sqaron Technologies, for Om Shri Hari Trading Private Limited.'],
-  ['Who built the backend of OSHT?', 'Saksham Srivastava supported the project as its backend developer, working with Shivam Jha, who led it.'],
-  ['Who built the app screens and the frontend?', 'Shivam Jha led OSHT and built what people use: the Android and iOS app, the web office console and the landing site, with its notifications and field-use automation.'],
+  ['Who developed the OSHT – Agro Trading app?', "OSHT – Agro Trading was built by Saksham Srivastava and Shivam Jha, co-founders of Sqaron Technologies, for Om Shri Hari Trading Private Limited. Saksham built the backend: servers, APIs, database, accounting books and automation. Shivam built the Android and iOS app, the office console's screens and the website."],
+  ['Who built the backend of OSHT?', 'Saksham Srivastava built the backend: the servers, APIs, database, accounting books and automation everything runs on. OSHT was built by Saksham and Shivam Jha together.'],
+  ['Who built the app screens and the frontend?', "Shivam Jha built what people use: the Android and iOS app with its notifications and field-use automation, the office console's screens and the website. OSHT was built by Shivam and Saksham Srivastava together."],
   ['What is OSHT – Agro Trading?', "The order book of Om Shri Hari Trading Pvt Ltd's grain business. Brokers and suppliers raise orders, follow each lorry from loading to the factory's receipt, send the papers behind it, and see purchase receipts and pay slips, in Hindi and English, with voice input."],
   ['Where can I download it?', 'Free on Google Play and the Apple App Store. An account with Om Shri Hari Trading is needed to sign in.'],
 ];
@@ -24,7 +24,7 @@ const data = [
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'OSHT – Agro Trading', applicationCategory: 'BusinessApplication',
     operatingSystem: 'Android, iOS', url: 'https://www.omshriharitrading.com/', sameAs: [PLAY, STORE],
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-    author: [{ '@id': `${SITE.url}/#shivam` }, { '@id': `${SITE.url}/#saksham` }],
+    author: [{ '@id': `${SITE.url}/#saksham` }, { '@id': `${SITE.url}/#shivam` }],
   },
   {
     '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -42,7 +42,7 @@ export default function OshtPage() {
           <h1>OSHT – <em>Agro Trading</em></h1>
         </div>
       </header>
-      <p className="pg-lead">The order book for Om Shri Hari Trading&apos;s grain business, used in the field by brokers, suppliers and staff. Led and built by <Link href="/shivam-jha/">Shivam Jha</Link>, with backend support from <Link href="/saksham-srivastava/">Saksham Srivastava</Link>, of Sqaron Technologies.</p>
+      <p className="pg-lead">The order book for Om Shri Hari Trading&apos;s grain business, used in the field by brokers, suppliers and staff. Built by <Link href="/saksham-srivastava/">Saksham Srivastava</Link> and <Link href="/shivam-jha/">Shivam Jha</Link>, co-founders of Sqaron Technologies. Saksham built the backend: servers, APIs, database, accounting books and automation. Shivam built the Android and iOS app, the office console&apos;s screens and the website.</p>
       <div className="pg-actions">
         <a className="btn btn--light" href={PLAY} rel="noopener">Google Play <span aria-hidden="true">↗</span></a>
         <a className="btn btn--ghost" href={STORE} rel="noopener">App Store <span aria-hidden="true">↗</span></a>
@@ -75,8 +75,8 @@ export default function OshtPage() {
         </div>
         <Facts title="App facts" rows={[
           ['App', 'OSHT – Agro Trading'],
-          ['Led by', <Link key="s" href="/shivam-jha/">Shivam Jha</Link>],
-          ['Backend support', <Link key="k" href="/saksham-srivastava/">Saksham Srivastava</Link>],
+          ['Backend, database, automation', <Link key="k" href="/saksham-srivastava/">Saksham Srivastava</Link>],
+          ['App, screens, website', <Link key="s" href="/shivam-jha/">Shivam Jha</Link>],
           ['Studio', 'Sqaron Technologies'],
           ['Built for', 'Om Shri Hari Trading Pvt Ltd'],
           ['Platforms', 'Android · iOS · Web office console'],

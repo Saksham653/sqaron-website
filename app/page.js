@@ -13,12 +13,12 @@ const jsonLd = {
       knowsAbout: ['Web design', 'Frontend development', 'Mobile apps', 'SaaS', 'AI agents', 'Chrome extensions', 'Backend development', 'Automation'],
     },
     {
-      '@type': 'Person', '@id': `${SITE.url}/#shivam`, name: 'Shivam Jha', jobTitle: 'Co-founder · AI architect, product & frontend', worksFor: { '@id': `${SITE.url}/#org` },
+      '@type': 'Person', '@id': `${SITE.url}/#shivam`, name: 'Shivam Jha', jobTitle: 'Co-founder · AI architect, product & frontend', worksFor: { '@id': `${SITE.url}/#org` }, url: `${SITE.url}/shivam-jha/`,
       sameAs: ['https://myself-koej.vercel.app/', 'https://github.com/shivamj56', 'https://www.linkedin.com/in/shivam-jha-509482268/', 'https://x.com/heyshivm11', 'https://www.fiverr.com/heyshivm'],
     },
     {
-      '@type': 'Person', '@id': `${SITE.url}/#saksham`, name: 'Saksham Srivastava', jobTitle: 'Co-founder · Backend, AI & data', worksFor: { '@id': `${SITE.url}/#org` },
-      sameAs: ['https://github.com/Saksham653', 'https://linkedin.com/in/saksham-srivastava-b689a8367', 'https://saksham653.github.io/'],
+      '@type': 'Person', '@id': `${SITE.url}/#saksham`, name: 'Saksham Srivastava', jobTitle: 'Co-founder · Backend, AI & data', worksFor: { '@id': `${SITE.url}/#org` }, url: `${SITE.url}/saksham-srivastava/`,
+      sameAs: ['https://github.com/Saksham653', 'https://linkedin.com/in/saksham-srivastava-b689a8367', 'https://saksham653.github.io/', 'https://www.fiverr.com/sakshamai_'],
     },
     ...PROJECTS.map((p) => ({
       '@type': 'CreativeWork', name: p.title, url: p.url, description: p.body,

@@ -1,6 +1,6 @@
 # Sqaron Technologies — website
 
-The website of **Sqaron Technologies Pvt Ltd**, the product studio of **Shivam Jha** and **Saksham Srivastava**: websites, mobile apps, SaaS and AI agents, designed and built end to end. Planned domain: sqylon.dev (not registered yet; see Deploy).
+The website of **Sqaron Technologies Pvt Ltd**, the product studio of **Shivam Jha** and **Saksham Srivastava**: websites, mobile apps, SaaS and AI agents, designed and built end to end. Domain: sqaron.dev, registered at Name.com through the GitHub Student Developer Pack (expires 29 Oct 2027, auto-renew off).
 
 ## Founders
 
@@ -58,7 +58,7 @@ Node version: `.nvmrc` (22, the same as Netlify). Line endings are LF, set by `.
 Before it goes public:
 
 - **Contact form.** The brief form posts to `/__forms.html`, which only Netlify Forms understands. On Vercel it needs a backend, for example a Vercel Function that emails or stores the brief. Until then, sending shows the "email us instead" message.
-- **Domain and email.** `lib/site.js` uses `https://sqylon.dev` and `hello@sqylon.dev`, but that domain is not registered yet. Point the real domain at Vercel and update `SITE.url` and `SITE.email`; they feed the canonical links, Open Graph tags, sitemap and JSON-LD.
+- **Domain and email.** `lib/site.js` uses `https://sqaron.dev` and `hello@sqaron.dev`. Point the domain's DNS (at Name.com) at the host, and set up email forwarding there so `hello@sqaron.dev` reaches a real inbox. `SITE.url` and `SITE.email` feed the canonical links, Open Graph tags and JSON-LD; `public/sitemap.xml`, `robots.txt`, `llms.txt` and `humans.txt` spell the domain out, so change them too if it ever moves.
 - `netlify.toml` and `public/__forms.html` are only for Netlify and can go once the site is on Vercel.
 
 To let Clonix and LUMIQ open inside the in-page browser, allow this site to frame them: replace `X-Frame-Options: DENY` / `frame-ancestors 'none'` with `Content-Security-Policy: frame-ancestors 'self' <this site's domain>`. Until then they open a preview with a button to the live site.

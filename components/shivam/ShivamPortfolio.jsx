@@ -150,7 +150,7 @@ function Hero() {
               <RotatingText texts={ROTATING} mainClassName="pf-rotate" highlight highlightColor="#A78BFF" staggerFrom="last" staggerDuration={0.014} rotationInterval={2600} splitBy="characters" />
             </motion.p>
             <motion.p className="pf-hero__sub" variants={rise}>
-              Co-founder of {SITE.name}. I led OSHT – Agro Trading, founded Clonix and built NexeraAI: designed, coded and shipped by one person, with no hand-offs.
+              Co-founder of {SITE.name}. With Saksham Srivastava I built OSHT – Agro Trading and co-founded Clonix, and I built NexeraAI, designing and coding what people touch myself, with no hand-offs.
             </motion.p>
             <motion.div className="pf-hero__cta" variants={rise}>
               <Magnet padding={70} magnetStrength={3.2}>
@@ -222,7 +222,7 @@ function About() {
         </ScrollReveal>
         <motion.div className="pf-about__body" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={list(0.1)}>
           <motion.p variants={rise}>I co-founded {SITE.name} with <Link className="cursor-target" href="/saksham-srivastava/">Saksham Srivastava</Link>. He builds what keeps things running; I build what people touch, from the first sketch to the store listing.</motion.p>
-          <motion.p variants={rise}>On <Link className="cursor-target" href="/osht/">OSHT – Agro Trading</Link> I led the product: the Android and iOS app brokers use in the field, the web console the office lives in, Hindi-first screens, and voice so a quantity can be spoken instead of typed.</motion.p>
+          <motion.p variants={rise}>I built <Link className="cursor-target" href="/osht/">OSHT – Agro Trading</Link> with Saksham. My part is what people use: the Android and iOS app brokers use in the field, the screens of the web console the office lives in, Hindi-first design, and voice so a quantity can be spoken instead of typed. His is the backend underneath: servers, APIs, database, accounting books and automation.</motion.p>
         </motion.div>
       </div>
       <motion.div className="pf-about__card" initial={{ opacity: 0, y: 50, rotate: 2 }} whileInView={{ opacity: 1, y: 0, rotate: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ type: 'spring', visualDuration: 1, bounce: 0.18 }}>

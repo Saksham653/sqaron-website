@@ -48,4 +48,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://sqylon.dev/sitemap.xml
+Sitemap: https://sqaron.dev/sitemap.xml

@@ -1,15 +1,18 @@
 'use client';
 
 /* The founder's photo rebuilt from characters, decoding top to bottom when it comes into view.
- * Move over it and the real photo shows through a lens that follows the cursor. */
+ * Move over it and the real photo shows through a lens that follows the cursor. `onDecoded` fires
+ * once the characters have settled; `photo` wipes the whole photo in over them. */
 import { useEffect, useRef } from 'react';
 
 const RAMP = ' .:-=+*#%@';
 const NOISE = '{}[]()<>/\\|=+-*_:;#$%&@!?01';
 
-export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 166', className = '' }) {
+export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 166', className = '', photo = false, onDecoded }) {
   const wrap = useRef(null);
   const canvas = useRef(null);
+  const done = useRef(onDecoded);
+  done.current = onDecoded;
 
   useEffect(() => {
     const box = wrap.current;
@@ -131,6 +134,7 @@ export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 
       raf = 0;
       if (!alive || !lum) return;
       if (draw(now)) raf = requestAnimationFrame(loop);
+      else if (done.current) done.current();
     };
 
     const io = new IntersectionObserver(([en]) => {
@@ -143,7 +147,7 @@ export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 
     img.onload = () => {
       if (!alive) return;
       sample();
-      if (reduced) { draw(0); return; }
+      if (reduced) { draw(0); if (done.current) done.current(); return; }
       io.observe(box);
     };
     const ro = new ResizeObserver(() => { if (lum && (!raf)) draw(seen ? performance.now() + 1e9 : 0); });
@@ -153,6 +157,7 @@ export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 
   }, [src, cols, color]);
 
   const move = (e) => {
+    if (photo) return;
     const r = wrap.current.getBoundingClientRect();
     wrap.current.style.setProperty('--mx', `${e.clientX - r.left}px`);
     wrap.current.style.setProperty('--my', `${e.clientY - r.top}px`);
@@ -161,7 +166,7 @@ export default function AsciiPortrait({ src, alt, cols = 70, color = '110, 242, 
   const leave = () => wrap.current.classList.remove('is-lens');
 
   return (
-    <div className={`ascii ${className}`.trim()} ref={wrap} onPointerMove={move} onPointerLeave={leave}>
+    <div className={`ascii${photo ? ' is-photo' : ''} ${className}`.trim()} ref={wrap} onPointerMove={move} onPointerLeave={leave}>
       <canvas ref={canvas} aria-hidden="true" />
       <img className="ascii__photo" src={src} alt={alt} />
     </div>

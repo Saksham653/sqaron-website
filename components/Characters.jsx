@@ -27,7 +27,7 @@ export default function Characters() {
       const C = (await import('@/lib/engines/crawlers')).default.Crawlers;
       if (cancelled || !Founders || !Founders.supported || !C) return;
       let sheet;
-      try { sheet = await Founders.sprites(LOOK, { size: 256 }); } catch (err) { console.warn('[sqylon] characters unavailable', err); return; }
+      try { sheet = await Founders.sprites(LOOK, { size: 256 }); } catch (err) { console.warn('[sqaron] characters unavailable', err); return; }
       if (cancelled) return;
       const rope = C.rope(sheet, {
         side: 'right', inset: 24, top: 0.16, bottom: 0.76, size: 116,
