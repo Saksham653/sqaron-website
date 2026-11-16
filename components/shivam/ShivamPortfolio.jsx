@@ -495,7 +495,7 @@ function PageDock() {
       { icon: icon(CursorMagicSelection02Icon, 22), label: 'Motion lab', onClick: go('lab'), active: active === 'lab' },
       { separator: true },
       { icon: icon(GithubIcon, 22), label: 'GitHub', onClick: out('https://github.com/shivamj56') },
-      { icon: icon(Linkedin01Icon, 22), label: 'LinkedIn', onClick: out('https://www.linkedin.com/in/shivam-jha-509482268/') },
+      { icon: icon(Linkedin01Icon, 22), label: 'LinkedIn', onClick: out('https://www.linkedin.com/in/shivamaniljha/') },
       { icon: icon(Mail01Icon, 22), label: 'Email me', onClick: () => { window.location.href = `mailto:${SITE.email}`; }, active: active === 'contact' },
     ];
   }, [active, goTo]);
