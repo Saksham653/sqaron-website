@@ -10,8 +10,8 @@ import { NEEDS, WHENS, BUDGETS, SITE } from '@/lib/site';
 
 // the direct routes, one row each, with both founders on every row
 const DIRECT = [
-  ['Portfolio', [['Shivam Jha', 'https://myself-koej.vercel.app/'], ['Saksham Srivastava', '/saksham-srivastava/']]],
-  ['LinkedIn', [['Shivam Jha', 'https://www.linkedin.com/in/shivam-jha-509482268/'], ['Saksham Srivastava', 'https://linkedin.com/in/saksham-srivastava-b689a8367']]],
+  ['Portfolio', [['Shivam Jha', 'https://shivamjha.dev/'], ['Saksham Srivastava', '/saksham-srivastava/']]],
+  ['LinkedIn', [['Shivam Jha', 'https://www.linkedin.com/in/shivamaniljha/'], ['Saksham Srivastava', 'https://linkedin.com/in/saksham-srivastava-b689a8367']]],
   ['GitHub', [['Shivam Jha', 'https://github.com/shivamj56'], ['Saksham Srivastava', 'https://github.com/Saksham653']]],
   ['Fiverr', [['Shivam Jha', 'https://www.fiverr.com/heyshivm'], ['Saksham Srivastava', 'https://www.fiverr.com/sakshamai_']]],
 ];

@@ -24,7 +24,7 @@ const SHIVAM = {
   bio: 'An AI architect and prompt engineer who designs and builds what people touch: sites that sell, Android and iOS apps, AI products and Chrome extensions. With Saksham Srivastava he built OSHT – Agro Trading and co-founded Clonix, and he built NexeraAI. Off-screen he also works as a freelance model.',
   tags: ['Next.js', 'React Native', 'LangGraph', 'LlamaIndex', 'pgvector', 'GSAP & WebGL'],
   built: 'OSHT (app & screens) · Clonix · NexeraAI · TBJ Properties · ADFusion · Safarline',
-  links: [['Profile', '/shivam-jha/'], ['Portfolio', 'https://myself-koej.vercel.app/'], ['GitHub', 'https://github.com/shivamj56'], ['LinkedIn', 'https://www.linkedin.com/in/shivam-jha-509482268/'], ['X', 'https://x.com/heyshivm11'], ['Fiverr', 'https://www.fiverr.com/heyshivm']],
+  links: [['Profile', '/shivam-jha/'], ['Portfolio', 'https://shivamjha.dev/'], ['GitHub', 'https://github.com/shivamj56'], ['LinkedIn', 'https://www.linkedin.com/in/shivamaniljha/'], ['X', 'https://x.com/heyshivm11'], ['Fiverr', 'https://www.fiverr.com/heyshivm']],
 };
 
 const PORTFOLIO = '/saksham-srivastava/';

@@ -29,7 +29,7 @@ const CLOSE = 2.4; // how close the camera starts on his face
 const RUN = { desk: 1.8, phone: 1.4 }; // scroll distance of the pinned sequence, in screen heights
 
 const TAGS = ['Next.js', 'React Native', 'GSAP & WebGL', 'Motion', 'LangGraph', 'LlamaIndex'];
-const LINKS = [['Portfolio', 'https://myself-koej.vercel.app/'], ['GitHub', 'https://github.com/shivamj56'], ['LinkedIn', 'https://www.linkedin.com/in/shivam-jha-509482268/'], ['Fiverr', 'https://www.fiverr.com/heyshivm']];
+const LINKS = [['Portfolio', 'https://shivamjha.dev/'], ['GitHub', 'https://github.com/shivamj56'], ['LinkedIn', 'https://www.linkedin.com/in/shivamaniljha/'], ['Fiverr', 'https://www.fiverr.com/heyshivm']];
 
 // his details come in on the scroll: the name letter by letter out of a mask, the rest line by line after it.
 // `at` is where in the timeline they start; the same steps are used inside the pin (desktop) and on their own
