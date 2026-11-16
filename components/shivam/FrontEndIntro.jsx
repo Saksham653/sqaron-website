@@ -200,10 +200,7 @@ export default function FrontEndIntro({ onOpen }) {
     return () => mm.revert();
   }, { scope: root, dependencies: [layout], revertOnUpdate: true });
 
-  // he smiles when you reach for his portfolio
-  const smile = (on) => { if (ctl.current && ctl.current.smile) ctl.current.smile(on); };
   const open = (e) => {
-    smile(true);
     if (e.metaKey || e.ctrlKey || !onOpen) return;
     e.preventDefault();
     const r = stage.current.getBoundingClientRect();
@@ -222,10 +219,6 @@ export default function FrontEndIntro({ onOpen }) {
           className="fe__open"
           href="/shivam-jha/"
           onClick={open}
-          onPointerEnter={() => smile(true)}
-          onPointerLeave={() => smile(false)}
-          onFocus={() => smile(true)}
-          onBlur={() => smile(false)}
           data-cursor="Open"
         >
           Open his portfolio <span aria-hidden="true">→</span>

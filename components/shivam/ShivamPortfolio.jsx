@@ -101,8 +101,6 @@ function Hero() {
   const fine = useMedia('(hover: hover) and (pointer: fine)');
   const big = useMedia('(min-width: 901px)');
   const calm = useMedia('(prefers-reduced-motion: reduce)');
-  const smile = (on) => ctl.current && ctl.current.smile && ctl.current.smile(on);
-  const smiles = { onPointerEnter: () => smile(true), onPointerLeave: () => smile(false), onFocus: () => smile(true), onBlur: () => smile(false) };
 
   // once he is drawn, he blinks twice: hello
   useEffect(() => {
@@ -154,11 +152,11 @@ function Hero() {
             </motion.p>
             <motion.div className="pf-hero__cta" variants={rise}>
               <Magnet padding={70} magnetStrength={3.2}>
-                <a className="pf-btn pf-btn--solid pf-btn--lg cursor-target" href="#contact" data-cursor-label="He'll smile" {...smiles}>
+                <a className="pf-btn pf-btn--solid pf-btn--lg cursor-target" href="#contact" data-cursor-label="Let's talk">
                   Start a project <span aria-hidden="true">→</span>
                 </a>
               </Magnet>
-              <StarBorder as="a" href="#work" className="pf-btn pf-btn--star pf-btn--lg cursor-target" data-cursor-label="Scroll" radius={999} color="#D7CCFF" duration={4.2} thickness={1.2} glow={0.85} backgroundColor="#0E0E14" borderColor="rgba(241, 240, 236, 0.16)" {...smiles}>
+              <StarBorder as="a" href="#work" className="pf-btn pf-btn--star pf-btn--lg cursor-target" data-cursor-label="Scroll" radius={999} color="#D7CCFF" duration={4.2} thickness={1.2} glow={0.85} backgroundColor="#0E0E14" borderColor="rgba(241, 240, 236, 0.16)">
                 See the work <span aria-hidden="true">↓</span>
               </StarBorder>
             </motion.div>
