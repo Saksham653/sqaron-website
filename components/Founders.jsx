@@ -30,7 +30,7 @@ const SHIVAM = {
 const PORTFOLIO = '/saksham-srivastava/';
 const SAKSHAM_TAGS = ['Python', 'FastAPI', 'PostgreSQL', 'LangChain', 'Docker', 'MLOps'];
 const SAKSHAM_BUILT = 'OSHT (backend) · Clonix (backend) · LUMIQ · StockWaves · FlowCraft · HR Agent Pro';
-const SAKSHAM_LINKS = [['Portfolio', 'https://saksham653.github.io/'], ['GitHub', 'https://github.com/Saksham653'], ['LinkedIn', 'https://linkedin.com/in/saksham-srivastava-b689a8367'], ['Fiverr', 'https://www.fiverr.com/sakshamai_']];
+const SAKSHAM_LINKS = [['Portfolio', 'https://saksham.sqaron.dev/'], ['GitHub', 'https://github.com/Saksham653'], ['LinkedIn', 'https://www.linkedin.com/in/saksham-srivastava-dev/'], ['Fiverr', 'https://www.fiverr.com/sakshamai_']];
 const BACKEND_WORDS = [
   { label: 'Meet Saksham Srivastava', href: PORTFOLIO },
   { label: 'the back end', href: PORTFOLIO },
