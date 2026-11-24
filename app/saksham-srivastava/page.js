@@ -14,7 +14,7 @@ const person = {
   jobTitle: 'Co-founder · Backend, AI & data', url: `${SITE.url}/saksham-srivastava/`, image: `${SITE.url}/assets/img/founders/saksham.jpg`,
   worksFor: { '@type': 'Organization', name: SITE.legalName, url: `${SITE.url}/` },
   knowsAbout: ['Backend development', 'Python', 'FastAPI', 'REST APIs', 'PostgreSQL', 'Database design', 'Double-entry accounting systems', 'Background workers', 'Automation', 'OCR', 'PDF generation', 'Agentic AI', 'LangChain', 'LLM applications', 'MLOps', 'Docker'],
-  sameAs: ['https://github.com/Saksham653', 'https://linkedin.com/in/saksham-srivastava-b689a8367', 'https://saksham653.github.io/', 'https://www.fiverr.com/sakshamai_'],
+  sameAs: ['https://saksham.sqaron.dev/', 'https://github.com/Saksham653', 'https://www.linkedin.com/in/saksham-srivastava-dev/', 'https://peerlist.io/saksham653', 'https://dev.to/saksham653', 'https://www.fiverr.com/sakshamai_'],
 };
 
 export default function SakshamPage() {

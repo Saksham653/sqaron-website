@@ -18,7 +18,7 @@ const jsonLd = {
     },
     {
       '@type': 'Person', '@id': `${SITE.url}/#saksham`, name: 'Saksham Srivastava', jobTitle: 'Co-founder · Backend, AI & data', worksFor: { '@id': `${SITE.url}/#org` }, url: `${SITE.url}/saksham-srivastava/`,
-      sameAs: ['https://github.com/Saksham653', 'https://linkedin.com/in/saksham-srivastava-b689a8367', 'https://saksham653.github.io/', 'https://www.fiverr.com/sakshamai_'],
+      sameAs: ['https://saksham.sqaron.dev/', 'https://github.com/Saksham653', 'https://www.linkedin.com/in/saksham-srivastava-dev/', 'https://peerlist.io/saksham653', 'https://dev.to/saksham653', 'https://www.fiverr.com/sakshamai_'],
     },
     ...PROJECTS.map((p) => ({
       '@type': 'CreativeWork', name: p.title, url: p.url, description: p.body,

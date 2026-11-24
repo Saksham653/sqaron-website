@@ -4,7 +4,7 @@
 
 ## Founders
 
-- Saksham Srivastava — co-founder of Sqaron Technologies; backend, AI and data. Builds APIs, databases, agentic AI, LLM apps and MLOps pipelines. Built OSHT – Agro Trading with Shivam Jha (the backend, database, accounting books and automation), co-founded Clonix with Shivam Jha (the whole backend), builder of LUMIQ, FlowCraft and StockWaves. GitHub: https://github.com/Saksham653 · LinkedIn: https://linkedin.com/in/saksham-srivastava-b689a8367 · Portfolio: https://saksham653.github.io/ · Fiverr: https://www.fiverr.com/sakshamai_
+- Saksham Srivastava — co-founder of Sqaron Technologies; backend, AI and data. Builds APIs, databases, agentic AI, LLM apps and MLOps pipelines. Built OSHT – Agro Trading with Shivam Jha (the backend, database, accounting books and automation), co-founded Clonix with Shivam Jha (the whole backend), builder of LUMIQ, FlowCraft and StockWaves. GitHub: https://github.com/Saksham653 · LinkedIn: https://www.linkedin.com/in/saksham-srivastava-dev/ · Portfolio: https://saksham.sqaron.dev/ · Fiverr: https://www.fiverr.com/sakshamai_
 - Shivam Jha (Shivam Anil Jha) — co-founder of Sqaron Technologies; AI architect, product and frontend. Builds sites that sell, Android and iOS apps, AI products and Chrome extensions. Built OSHT – Agro Trading with Saksham Srivastava (the app, office console screens and website), co-founded Clonix with Saksham Srivastava (the whole frontend and the extractor) and built NexeraAI. Portfolio: https://shivamjha.dev/ · GitHub: https://github.com/shivamj56 · LinkedIn: https://www.linkedin.com/in/shivamaniljha/ · Fiverr: https://www.fiverr.com/heyshivm
 
 ## Work
