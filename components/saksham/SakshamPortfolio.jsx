@@ -125,7 +125,7 @@ function Hero() {
                 <button type="button" aria-pressed={photo} onClick={() => show(true)}>photo</button>
               </span>
             </div>
-            <AsciiPortrait src={SAKSHAM.photo} alt="Saksham Srivastava" cols={86} photo={photo} onDecoded={decoded} />
+            <AsciiPortrait src={SAKSHAM.photo} alt="Saksham Srivastava, co-founder of Sqaron Technologies" cols={86} photo={photo} onDecoded={decoded} />
           </div>
         </motion.div>
       </div>
