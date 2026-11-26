@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: 'Saksham Srivastava — Backend, AI & data | Co-founder, Sqaron Technologies',
-  description: 'Saksham Srivastava builds backends, agentic AI and data systems and is co-founder of Sqaron Technologies. Built OSHT – Agro Trading with Shivam Jha (its backend), co-founded Clonix with Shivam Jha (its whole backend), builder of LUMIQ, StockWaves and FlowCraft.',
+  description: 'Saksham Srivastava builds backends, agentic AI and data systems and is co-founder of Sqaron Technologies. Built OSHT – Agro Trading with Shivam Jha (its backend), co-founded Clonix with Shivam Jha (its whole backend), and builder of LUMIQ for Android, StockWaves and FlowCraft.',
   alternates: { canonical: '/saksham-srivastava/' },
   openGraph: { title: 'Saksham Srivastava — the back end of Sqaron', images: [{ url: '/assets/og.png', width: 1200, height: 630 }] },
 };
